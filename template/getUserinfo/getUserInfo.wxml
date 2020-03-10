@@ -1,0 +1,14 @@
+<!-- 自定义授权弹框 -->
+<view class='getUserInfo' style='display:{{mou_box}}'>
+  <view class='getUserInfo_max'>
+    <view class='getUserInfo_title'>
+      获取微信授权信息
+    </view>
+    <view class='getUserInfo_text'>
+    微信登录需要您的用户信息，立即前往设置！
+    </view>
+    <view class='getUserInfo_botton'>
+      <button      class='getUserInfo_botton_two'open-type="getUserInfo"lang="zh_CN"bindgetuserinfo="onGotUserInfo">去设置</button>
+    </view>
+  </view>
+</view>

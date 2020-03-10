@@ -1,0 +1,80 @@
+<!--pages/viewqdstate/viewqdstate.wxml-->
+<view class="page">
+  <view class="page__bd page__bd_spacing">
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="placeholder"><image class="csselogo" src="../../images/szucsselogo.png"></image></view>
+      </view>
+    </view>
+  </view><!-- page__bd_spacing  -->
+  <view class="page__bd page__bd_spacing">
+    <view class="weui-flex">
+      <view class="weui-flex__item noticetitle">
+        <text class="">{{notice.title}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="page__hd">
+    <view class="page__title mylist">
+      已知悉列表</view>
+  </view><!-- page_hd -->
+  <view class="page__hd" wx:if="{{hasyqd}}">
+    <view class="table" >
+      <view class="tr">
+        <view class="th">序号</view>
+        <view class="th">姓名</view>
+        <view class="th">类别</view>
+      </view>
+      <view class='tr'wx:for="{{yqd}}" wx:key="key">
+        <view class='td thindex'>{{index+1}}</view>
+        <view class='td thname'>{{item.name}}</view>
+        <view class='td thtype'>{{item.usertype}}</view>
+      </view>
+      <view class="tr">
+        <view class='td'>人数：{{yqdlength}}</view>
+      </view>
+    </view>
+    
+  </view>
+  <view class="page__bd" wx:else="{{!hasyqd}}">
+      <view class="weui-loading__wrp">
+          <view class="weui-loading"></view>
+      </view>
+  </view>
+  <view class="page__hd myline">
+    <view class="page__title mylist">
+      </view>
+  </view><!-- page_hd -->
+  <view class="page__hd">
+    <view class="page__title mylist">
+      未知悉列表</view>
+  </view><!-- page_hd -->
+  <view class="page__hd" wx:if="{{haswqd}}">
+    <view class="table" >
+      <view class="tr">
+        <view class="th thindex">序号</view>
+        <view class="th thname">姓名</view>
+        <view class="th thtype">类别</view>
+      </view>
+      <view class='tr'wx:for="{{wqd}}" wx:key="key">
+        <view class='td'>{{index+1}}</view>
+        <view class='td'>{{item.name}}</view>
+        <view class='td'>{{item.usertype}}</view>
+      </view>
+      <view class="tr">
+        <view class='td'>人数：{{wqdlength}}</view>
+      </view>
+    </view>
+    
+  </view>
+  <view class="page__bd" wx:if="{{!haswqd}}">
+      <view class="weui-loading__wrp">
+          <view class="weui-loading"></view>
+      </view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="weui-footer">
+      <view class="weui-footer__text">csse © 2020 </view>
+    </view>
+  </view>
+</view>
